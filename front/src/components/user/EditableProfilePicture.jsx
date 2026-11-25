@@ -45,7 +45,7 @@ class EditableProfilePicture extends Component {
   render(props, {}) {
     return (
       <div style={imageStyle}>
-        <img ref={img => (this.img = img)} src={props.newProfilePicture} />
+        <img ref={img => (this.img = img)} src={props.newProfilePicture} alt="" />
       </div>
     );
   }

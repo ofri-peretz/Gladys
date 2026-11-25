@@ -32,6 +32,7 @@
     "no": "No",
     "edit": "Editar",
     "delete": "Eliminar",
+    "remove": "Quitar",
     "next": "Siguiente",
     "back": "Atrás",
     "create": "Crear",
@@ -379,6 +380,7 @@
       "saveSettingsButton": "Guardar configuración"
     },
     "configureHouse": {
+      "removeRoom": "Quitar {{room}}",
       "title": "Configure su casa",
       "description": "Toda la información se guarda únicamente en la base de datos local de Gladys. Si tiene varias casas, podrá configurarlas más adelante en Gladys.",
       "houseNameLabel": "Nombre",
@@ -2712,6 +2714,7 @@
       "description": "Conecte Gladys a HomeKit y utilice Siri para controlar sus dispositivos.",
       "introduction": "Para conectar Gladys a HomeKit, necesita un dispositivo Apple (iPhone, iPad, iPod touch).",
       "qrCode": "Escanee este código QR desde la aplicación Home de iOS para añadir Gladys y todos los dispositivos compatibles.",
+      "qrCodeAlt": "Código QR para añadir Gladys en la aplicación Home",
       "exposure": "Por defecto, Gladys expone todos los dispositivos compatibles a HomeKit. En su lugar, puede elegir los dispositivos que desea ver en la aplicación Home.",
       "exposureModeAll": "Exponer todos los dispositivos compatibles",
       "exposureModeSelection": "Exponer solo los dispositivos seleccionados",
@@ -8650,6 +8653,7 @@
   "gatewayTwoFactorAuth": {
     "title": "Gladys Plus",
     "configureTitle": "Configurar la autenticación de doble factor",
+    "qrCodeAlt": "Código QR para añadir Gladys a su aplicación de autenticación de doble factor",
     "configureButton": "Configurar 2FA",
     "secretLabel": "Secreto",
     "copy": "Copiar",

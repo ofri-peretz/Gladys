@@ -1,4 +1,12 @@
-import { Text } from 'preact-i18n';
+import { Text, Localizer } from 'preact-i18n';
+
+// An icon-only link acts as a button: Enter and Space activate it like a click.
+const onKeyActivate = action => e => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    action();
+  }
+};
 
 // Wrapper of every widget edit form, rendered inside the editor's side
 // panel / bottom sheet (EditPanel). Plain markup on purpose: the react-dnd
@@ -12,9 +20,18 @@ const BaseEditBox = ({ children, ...props }) => (
     <div class="card-header">
       <h3 class="card-title">{props.titleKey && <Text id={props.titleKey} />}</h3>
       <div class="card-options">
-        <a onClick={() => props.removeBox(props.x, props.y)} class="card-options-remove">
-          <i class="fe fe-x" />
-        </a>
+        <Localizer>
+          <a
+            role="button"
+            tabIndex="0"
+            aria-label={<Text id="global.remove" />}
+            onClick={() => props.removeBox(props.x, props.y)}
+            onKeyDown={onKeyActivate(() => props.removeBox(props.x, props.y))}
+            class="card-options-remove"
+          >
+            <i class="fe fe-x" />
+          </a>
+        </Localizer>
       </div>
     </div>
     <div class="card-body">{children}</div>

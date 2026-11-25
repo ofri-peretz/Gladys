@@ -8,6 +8,14 @@ const removeRoomLocal = (index, removeRoom) => () => {
   removeRoom(index);
 };
 
+// An icon-only link acts as a button: Enter and Space activate it like a click.
+const onKeyActivate = action => e => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    action();
+  }
+};
+
 const DesktopConfigureHouseTab = ({ children, ...props }) => (
   <div class="row">
     <div class="col-md-8 mx-auto">
@@ -57,9 +65,18 @@ const DesktopConfigureHouseTab = ({ children, ...props }) => (
             props.signupRooms.map((room, index) => (
               <span class="tag">
                 {room}
-                <a onClick={removeRoomLocal(index, props.removeRoom)} class="tag-addon">
-                  <i class="fe fe-x" />
-                </a>
+                <Localizer>
+                  <a
+                    role="button"
+                    tabIndex="0"
+                    aria-label={<Text id="signup.configureHouse.removeRoom" fields={{ room }} />}
+                    onClick={removeRoomLocal(index, props.removeRoom)}
+                    onKeyDown={onKeyActivate(removeRoomLocal(index, props.removeRoom))}
+                    class="tag-addon"
+                  >
+                    <i class="fe fe-x" />
+                  </a>
+                </Localizer>
               </span>
             ))}
         </div>

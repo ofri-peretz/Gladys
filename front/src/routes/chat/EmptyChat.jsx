@@ -71,7 +71,7 @@ class EmptyChat extends Component {
 
     return (
       <div class={style.emptyChatState}>
-        <img src="/assets/images/undraw_typing.svg" class={style.emptyChatImage} />
+        <img src="/assets/images/undraw_typing.svg" alt="" class={style.emptyChatImage} />
         <p class={style.emptyChatText}>
           <Text id="chat.emptyStateMessage" />
         </p>

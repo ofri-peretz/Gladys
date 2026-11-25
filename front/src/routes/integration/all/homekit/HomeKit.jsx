@@ -1,4 +1,4 @@
-import { Text, MarkupText } from 'preact-i18n';
+import { Text, MarkupText, Localizer } from 'preact-i18n';
 import get from 'get-value';
 import Select from 'react-select';
 import { RequestStatus } from '../../../../utils/consts';
@@ -96,7 +96,15 @@ const HomKitPage = ({ children, ...props }) => (
             {props.user && props.user.role === USER_ROLE.ADMIN && (
               <div class="form-group">
                 <Text id={`integration.homekit.qrCode`} />
-                {props.homekitSetupDataUrl && <img class="mx-auto d-block mb-3" src={props.homekitSetupDataUrl} />}
+                {props.homekitSetupDataUrl && (
+                  <Localizer>
+                    <img
+                      class="mx-auto d-block mb-3"
+                      src={props.homekitSetupDataUrl}
+                      alt={<Text id="integration.homekit.qrCodeAlt" />}
+                    />
+                  </Localizer>
+                )}
                 <div class="input-group mb-2">
                   <p className={style.buttonDescription}>
                     <Text id="integration.homekit.mdns" />

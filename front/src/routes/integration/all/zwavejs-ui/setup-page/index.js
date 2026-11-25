@@ -142,13 +142,18 @@ class DiscoverTab extends Component {
             <p>
               <Text id="integration.zwavejs-ui.setup.zwaveJsUiConfigurationMqttDescription" />
             </p>
-            <img class="img-fluid mt-4 mb-4" src="/assets/integrations/zwavejs-ui/zwavejs-ui-mqtt-configuration.jpg" />
+            <img
+              class="img-fluid mt-4 mb-4"
+              src="/assets/integrations/zwavejs-ui/zwavejs-ui-mqtt-configuration.jpg"
+              alt=""
+            />
             <p>
               <Text id="integration.zwavejs-ui.setup.zwaveJsUiConfigurationGatewayDescription" />
             </p>
             <img
               class="img-fluid mt-4 mb-4"
               src="/assets/integrations/zwavejs-ui/zwavejs-ui-gateway-configuration.jpg"
+              alt=""
             />
 
             <h4>

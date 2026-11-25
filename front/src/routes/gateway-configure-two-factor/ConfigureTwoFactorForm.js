@@ -59,7 +59,16 @@ const DesktopConfigureTwoFactorForm = ({ children, ...props }) => (
             </p>
 
             <div class="form-group">
-              {props.dataUrl && <img class="mx-auto d-block" src={props.dataUrl} style={{ marginBottom: '20px' }} />}
+              {props.dataUrl && (
+                <Localizer>
+                  <img
+                    class="mx-auto d-block"
+                    src={props.dataUrl}
+                    alt={<Text id="gatewayTwoFactorAuth.qrCodeAlt" />}
+                    style={{ marginBottom: '20px' }}
+                  />
+                </Localizer>
+              )}
             </div>
 
             <div class="form-group">
